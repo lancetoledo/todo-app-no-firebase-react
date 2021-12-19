@@ -16,23 +16,19 @@ const data = [
 
 
 function App() {
-  // Create a state that holds the data arr
+  //#1 Create a state that holds the data arr
   const [tasks, setTasks] = useState(data)
 
   
   // Create a side effect that runs a function that switches the todos by filter when the todos OR filter changes
-
-
-  
   console.log(tasks)
 ;
 
   return (
 
     <div className="App">
-        <div className="background-image">
-        </div>
       <div className="container">
+        {/* Can turn this to a header component */}
           <div className="header">
               <div className="title">
                   TODO
@@ -42,11 +38,12 @@ function App() {
               </div>
           </div>
 
-          {/* Pass down todos state and setTodos function as props */}
+          {/* #2 Pass down todos state and setTodos function as props */}
           <TaskInput tasks = {tasks} setTasks = {setTasks} />
 
           {/* SHOULD BE THE TODOLIST COMPONENT */}
           {/* Pass down tasks state, setTasks function, filteredTasks, filterTasks, setFilterStatus function */}
+          {/* #9 */}
           <TaskList
             tasks = {tasks}
             setTasks = {setTasks}

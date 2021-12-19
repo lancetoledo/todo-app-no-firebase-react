@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 
+// #3 destructure props
 export default function TaskInput({tasks,setTasks}) {
-    // Create a state that keeps track of the input
+    // #4 Create a state that keeps track of the input
     const [input,setInput] = useState('')
 
     const generateId = (array) => {
@@ -10,17 +11,17 @@ export default function TaskInput({tasks,setTasks}) {
         return Math.max(...ids) + 1;
       };
    
-    // When there is a change to the input update the input state and set up to be submited
+    //#5 When there is a change to the input update the input state and set up to be submited
     const handleChange = (e) => {
         setInput(e.target.value)
     }
     
-    // onSubmit if there IS an input CREATE a new task object and add it to the array.
+    //#6 onSubmit if there IS an input CREATE a new task object and add it to the array.
     const handleForm = (e) => {
         // Prevent default so the page doesn't refresh and get re rendered
         e.preventDefault()
 
-        // if input state exists then create the new task object
+        //#7 if input state exists then create the new task object
         if(input) {
             const newTask = {
                 id: generateId(tasks),
@@ -43,6 +44,7 @@ export default function TaskInput({tasks,setTasks}) {
                 </div>
             </div>
             <div className="new-todo-input">
+                {/* #8 */}
                 <form onSubmit={handleForm}>
                     <input id="todo-input" type="text" placeholder="Create a new todo..." value={input} onChange={handleChange} />
                 </form>

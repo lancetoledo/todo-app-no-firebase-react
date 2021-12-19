@@ -1,12 +1,14 @@
 import React from 'react'
 import Task from './Task'
-
+// #10
 function TaskList({tasks,setTasks}) {
     
     return (
         <div className="todo-items-wrapper">
         <div className="todo-items">
+            {/* #11 Map through the tasks array that get's passed down form app */}
          {tasks.map((task)=>{
+            //  #12
             return <Task
                 task = {task}
                 setTasks = {setTasks}

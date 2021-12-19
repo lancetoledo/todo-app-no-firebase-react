@@ -1,6 +1,7 @@
 import React from 'react'
 
-function Task({task, tasks, setTaks}) {
+// #13
+function Task({task}) {
     return (
         <div className="todo-item">
         <div className="check">
@@ -9,6 +10,7 @@ function Task({task, tasks, setTaks}) {
             </div>
         </div>
         <div className="todo-text">
+            {/* #14 */}
            {task.text}
         </div>
     </div>
