@@ -1,5 +1,5 @@
 import './App.css';
-import { useEffect , useState} from 'react';
+import { useEffect, useState } from 'react';
 import TaskInput from './components/TaskInput'
 import TaskList from './components/TaskList';
 
@@ -17,38 +17,37 @@ const data = [
 
 function App() {
   //#1 Create a state that holds the data arr
-  const [tasks, setTasks] = useState(data)
 
-  
+
+
   // Create a side effect that runs a function that switches the todos by filter when the todos OR filter changes
-  console.log(tasks)
-;
+
+  ;
 
   return (
 
     <div className="App">
       <div className="container">
         {/* Can turn this to a header component */}
-          <div className="header">
-              <div className="title">
-                  TODO
-              </div>
-              <div className="theme">
-                  <img src="assets/icon-sun.svg" alt=''/>
-              </div>
+        <div className="header">
+          <div className="title">
+            TODO
           </div>
+          <div className="theme">
+            <img src="assets/icon-sun.svg" alt='' />
+          </div>
+        </div>
 
-          {/* #2 Pass down todos state and setTodos function as props */}
-          <TaskInput tasks = {tasks} setTasks = {setTasks} />
+        {/* #2 Pass down todos state and setTodos function as props */}
+        <TaskInput />
 
-          {/* SHOULD BE THE TODOLIST COMPONENT */}
-          {/* Pass down tasks state, setTasks function, filteredTasks, filterTasks, setFilterStatus function */}
-          {/* #9 */}
-          <TaskList
-            tasks = {tasks}
-            setTasks = {setTasks}
-          
-          />
+        {/* SHOULD BE THE TODOLIST COMPONENT */}
+        {/* Pass down tasks state, setTasks function, filteredTasks, filterTasks, setFilterStatus function */}
+        {/* #9 */}
+        <TaskList
+
+
+        />
       </div>
     </div>
   );
